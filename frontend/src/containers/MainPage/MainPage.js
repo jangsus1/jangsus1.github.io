@@ -2,8 +2,9 @@ import React, {Component} from 'react'
 import {Header, Grid, Icon} from 'semantic-ui-react'
 import {Fade} from 'react-reveal'
 import { connect } from 'react-redux';
-import {Popover, OverlayTrigger} from 'react-bootstrap'
+import {OverlayTrigger, Tooltip} from 'react-bootstrap'
 import './MainPage.css'
+import Divider from '../../components/divider'
 
 
 
@@ -29,12 +30,13 @@ class MainPage extends Component{
 
     copy = () => {
         const el = document.createElement('textarea')
-        el.value = "min99101511@naver.com"
+        el.value = "jangsus1@snu.ac.kr"
         document.body.appendChild(el);
         el.select()
         document.execCommand("copy")
         document.body.removeChild(el);
     }
+	
 
     render() {
         return(
@@ -42,7 +44,6 @@ class MainPage extends Component{
                     <Grid centered style = {{backgroundColor : '#eeeeee'}}>
                         <Grid.Row textAlign='center' style = {{height : '550px'}} >
                             <Grid.Column textAlign='center' >
-                                
                                 <Fade duration = {1500} top cascade>
                                     <Header style = {{fontWeight : '100',fontFamily : 'Arial', marginTop : '200px',fontSize : '10em', color : "#222831"}}>Hello</Header>
                                 </Fade>
@@ -60,13 +61,10 @@ class MainPage extends Component{
                         </Grid.Row>
                     </Grid>
                     <Grid>
-                        <Grid.Row columns = {2} style = {{height : '130px', marginTop : "20px"}} divided>
-                            <Grid.Column width={8}></Grid.Column>
-                            <Grid.Column width={8}></Grid.Column>
-                        </Grid.Row>
+                        <Divider />
                         <Grid.Row id = "GridRows" style = {{marginTop : "-5px"}} columns = {1}>
                             <Grid.Column textAlign='center'>
-                                <Header style = {{fontWeight : '100',fontFamily : 'Arial', fontSize : '3em', color : "#222831"}}></Header>
+                                <Header style = {{fontWeight : '200',fontFamily : 'Arial', fontSize : '3em', color : "#222831"}}></Header>
                             </Grid.Column>
                         </Grid.Row>
                         <Grid.Row id = "GridRows" style = {{height : "200px", marginTop : "20px"}} columns = {1}>
@@ -75,38 +73,47 @@ class MainPage extends Component{
                                     <Header style = {{ fontWeight : '200',fontFamily : 'Arial', lineHeight : "30px" , color : "#222831"}}>
                                         안녕하세요!<br/>
                                         저의 포트폴리오 사이트에 방문해주셔서 감사드립니다.<br/>
-                                        개발을 배우는 동안 남긴 기록이 짧게나마 담겨있으니<br/>
+                                        개발자, 혹은 연구자로서의 기록이 짧게나마 담겨있으니<br/>
                                         편하게 둘러보고 가시길 바랍니다.<br/>
                                     </Header>
                                 </Fade>
                             </Grid.Column>
                         </Grid.Row>
+						<Grid.Row id = "GridRows" style = {{height : "200px", marginTop : "20px"}} columns = {1}>
+                            <Grid.Column textAlign='center'>
+                                <Fade bottom>
+									<Header style = {{ fontWeight : '100',fontFamily : 'Arial', lineHeight : "30px" , color : "#222831"}}>
+                                        Hi!<br/>
+                                        Thank you all for visiting my portfolio.<br/>
+                                        Feel free to take a look and understand who I am as a developer or researcher.<br/>
+                                        Would be a big pleasure if you contact me! :)<br/>
+                                    </Header>
+                                </Fade>
+                            </Grid.Column>
+                        </Grid.Row>
                     </Grid>
-                    <Fade bottom cascade>
+				
+					<Fade bottom cascade>
                         <Grid>
-                            <Grid.Row columns = {2} style = {{height : '130px', marginTop : "20px"}} divided>
-                                <Grid.Column width={8}></Grid.Column>
-                                <Grid.Column width={8}></Grid.Column>
-                            </Grid.Row>
+							<Divider />
                             <Grid.Row id = "GridRows" style = {{marginTop : "-5px"}} columns = {1}>
                                 <Grid.Column textAlign='center'>
-                                    <Header style = {{fontWeight : '100',fontFamily : 'Arial', fontSize : '3em', color : "#222831"}}>Academic Background</Header>
+                                    <Header style = {{fontWeight : '100',fontFamily : 'Arial', fontSize : '3em', color : "#222831"}}>Personal Interests</Header>
                                 </Grid.Column>
                             </Grid.Row>
                             <Grid.Row id = "GridRows" style = {{height : "200px", marginTop : "20px" }} columns = {1}>
                                 <Grid.Column textAlign='center'>
-                                    <Header style = {{ fontWeight : '200',fontFamily : 'Arial', color : "#222831"}}>2015.03 ~ 2018.01<br/> 신일고등학교</Header>
-                                    <Header style = {{ fontWeight : '200',fontFamily : 'Arial', color : "#222831"}}>2018.03 ~ ing<br/> 서울대학교 컴퓨터공학부</Header>
+                                    <Header style = {{ fontWeight : '200',fontFamily : 'Arial', color : "#222831"}}>Currently studying various ML/DL Models' mathmatical algorithms<br/>
+										Designing or Enhancing the base system/platform <br/> where many software technologies are used easily by high-level APIs</Header>
+                                    <Header style = {{ fontWeight : '200',fontFamily : 'Arial', color : "#222831"}}>현재는 ML/DL을 구성하는 여러가지 모델들의 알고리즘에 관심이 생겨서 공부하고 있습니다.<br/> 이와 더불어 소프트웨어 기술이 High-Level API로 사용될 수 있도록 하는<br/> Base Platform을 디자인, 향상시키는데에 큰 관심을 갖고 있습니다.</Header>
                                 </Grid.Column>
                             </Grid.Row>
                         </Grid>
                     </Fade>
+				
                     <Fade bottom cascade>
                         <Grid>
-                            <Grid.Row id = "GridRows" columns = {2} style = {{height : '130px', marginTop : "20px"}} divided>
-                                <Grid.Column width={8}></Grid.Column>
-                                <Grid.Column width={8}></Grid.Column>
-                            </Grid.Row>
+                            <Divider/>
                             <Grid.Row id = "GridRows" style = {{marginTop : "-5px"}} columns = {1}>
                                 <Grid.Column textAlign='center'>
                                     <Header style = {{fontWeight : '100',fontFamily : 'Arial', fontSize : '3em', color : "#222831"}}>Projects</Header>
@@ -190,12 +197,25 @@ class MainPage extends Component{
                             </Grid.Row>
                         </Grid>
                     </Fade>
+					<Fade bottom cascade>
+                        <Grid>
+                            <Divider/>
+                            <Grid.Row id = "GridRows" style = {{marginTop : "-5px"}} columns = {1}>
+                                <Grid.Column textAlign='center'>
+                                    <Header style = {{fontWeight : '100',fontFamily : 'Arial', fontSize : '3em', color : "#222831"}}>Academic Background</Header>
+                                </Grid.Column>
+                            </Grid.Row>
+                            <Grid.Row id = "GridRows" style = {{height : "200px", marginTop : "20px" }} columns = {1}>
+                                <Grid.Column textAlign='center'>
+                                    <Header style = {{ fontWeight : '200',fontFamily : 'Arial', color : "#222831"}}>2015.03 ~ 2018.01<br/> 신일고등학교</Header>
+                                    <Header style = {{ fontWeight : '200',fontFamily : 'Arial', color : "#222831"}}>2018.03 ~ ing<br/> 서울대학교 컴퓨터공학부</Header>
+                                </Grid.Column>
+                            </Grid.Row>
+                        </Grid>
+                    </Fade>
                     <Fade bottom cascade>
                         <Grid>
-                            <Grid.Row id = "GridRows" columns = {2} style = {{height : '130px', marginTop : "20px"}} divided>
-                                <Grid.Column width={8}></Grid.Column>
-                                <Grid.Column width={8}></Grid.Column>
-                            </Grid.Row>
+                            <Divider/>
                             <Grid.Row id = "GridRows" style = {{marginTop : "-5px"}} columns = {1}>
                                 <Grid.Column textAlign='center'>
                                     <Header style = {{fontWeight : '100',fontFamily : 'Arial', fontSize : '3em', color : "#222831"}}>Others</Header>
@@ -210,7 +230,7 @@ class MainPage extends Component{
                             <Grid.Row id = "GridRows" style = {{marginTop : "10px"}}>
                                 <Grid.Column textAlign='center'>
                                     <Header style = {{fontWeight : '100',fontFamily : 'Arial', color : "#222831"}}>서울대학교 컴퓨터공학부 18학번 대표</Header>
-                                    <Header style = {{fontWeight : '100',fontFamily : 'Arial', color : "#222831", marginTop : "-12px"}}>2018.09 ~ ing</Header>
+                                    <Header style = {{fontWeight : '100',fontFamily : 'Arial', color : "#222831", marginTop : "-12px"}}>2018.09 ~ 2020.06</Header>
                                 </Grid.Column>
                             </Grid.Row>
                             <Grid.Row id = "GridRows">
@@ -223,10 +243,7 @@ class MainPage extends Component{
                     </Fade>
                     <Fade bottom cascade>
                         <Grid>
-                            <Grid.Row id = "GridRows" columns = {2} style = {{height : '130px', marginTop : "20px"}} divided>
-                                <Grid.Column width={8}></Grid.Column>
-                                <Grid.Column width={8}></Grid.Column>
-                            </Grid.Row>
+                            <Divider/>
                             <Grid.Row id = "GridRows" style = {{marginTop : "-5px"}} columns = {1}>
                                 <Grid.Column textAlign='center'>
                                     <Header style = {{fontWeight : '100',fontFamily : 'Arial', fontSize : '3em', color : "#222831"}}>Contact Me</Header>
@@ -237,20 +254,16 @@ class MainPage extends Component{
                                     <Icon onClick = {() => window.location = "https://github.com/jangsus1"} link size = "big" name = "github"/>
                                 </Grid.Column >
                                 <Grid.Column textAlign = "center"  style = {{display : "block", minWidth : "50px"}} width = {1}>
-                                    <OverlayTrigger rootClose trigger = "click" placement = "top" 
-                                        overlay = {
-                                            <Popover>
-                                                <Popover.Content>
-                                                    Email Copied!
-                                                </Popover.Content>
-                                            </Popover>
-                                        }
+                                    <OverlayTrigger rootClose trigger = "click" placement = "top" show="true" overlay = {<Tooltip id='emailTooltip'>
+														Email Copied!
+													</Tooltip>}
                                     >
-                                        <Icon onClick = {this.copy} link size = "big" name = "mail" />
+										<Icon onClick = {this.copy} link size = "big" name = "mail" />
                                     </OverlayTrigger>
                                 </Grid.Column>
                                 <Grid.Column textAlign = "center" style = {{display : "block", minWidth : "50px"}} width = {1}>
-                                    <Icon onClick = {() => window.location = "https://www.instagram.com/man_seogiii/"} link size = "big" name = "instagram"/>
+									<Icon onClick = {() => window.location = "https://www.instagram.com/man_seogiii/"} link size = "big" name = "instagram"/>
+                                    
                                 </Grid.Column>
                             </Grid.Row>
                         </Grid>

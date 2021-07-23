@@ -31,7 +31,7 @@ class Navbar extends Component {
         window.location.assign('https://jangsus1.tistory.com')
       }
       else{
-        window.location.assign('https://www.surbing.shop')
+        window.location.assign('https://github.com/jangsus1')
       }
     }
 
@@ -69,7 +69,7 @@ class Navbar extends Component {
               </Grid.Row>
               <Grid.Row>
               <Grid.Column textAlign = "center" >
-                <Header id = "Item" onClick = {() => this.menuClick(3)} className = "menuItem" size = "huge" style = {{marginTop : 50, fontSize : '4em'}}>Project</Header>
+                <Header id = "Item" onClick = {() => this.menuClick(3)} className = "menuItem" size = "huge" style = {{marginTop : 50, fontSize : '4em'}}>GitHub</Header>
                 </Grid.Column>
               </Grid.Row>
             </Grid>
